@@ -42,7 +42,8 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/editBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="4dp"
@@ -53,8 +54,9 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="4dp"
                 android:backgroundTint="@color/colorDanger"
@@ -64,8 +66,9 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/shareBtn"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="4dp"
                 android:backgroundTint="@color/colorGoogleYellow"

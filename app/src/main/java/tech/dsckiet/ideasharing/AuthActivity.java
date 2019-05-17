@@ -81,6 +81,14 @@ public class AuthActivity extends AppCompatActivity {
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+//        mGoogleSignInButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(AuthActivity.this, MainActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
         mGoogleSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

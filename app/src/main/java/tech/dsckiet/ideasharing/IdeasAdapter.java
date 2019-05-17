@@ -8,65 +8,65 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class IdeasAdapter extends RecyclerView.Adapter<IdeasAdapter.view_holder> {
+public class IdeasAdapter extends RecyclerView.Adapter<IdeasAdapter.viewHolder> {
     Context context;
-    ArrayList<String> titleList, desclList, techList;
+    private List<IdeasRecyclerView> ideasList;
 
-    public IdeasAdapter(Context applicationContext, ArrayList<String> titleList, ArrayList<String> desclList, ArrayList<String> techList) {
+    public IdeasAdapter(Context applicationContext, List<IdeasRecyclerView> ideasList) {
         this.context = applicationContext;
-        this.titleList = titleList;
-        this.desclList = desclList;
-        this.techList = techList;
+        this.ideasList = ideasList;
     }
 
     @Override
-    public view_holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public viewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.idea_card, parent, false);
-        return new view_holder(view);
+        return new viewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final IdeasAdapter.view_holder holder, final int position) {
-        holder.titletv.setText(titleList.get(position));
-        holder.desctv.setText(desclList.get(position));
-        holder.techtv.setText(techList.get(position));
+    public void onBindViewHolder(final IdeasAdapter.viewHolder holder, final int position) {
 
-        holder.shareBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
+        IdeasRecyclerView ideasRecyclerView = ideasList.get(position);
+        holder.titletv.setText(ideasRecyclerView.getIdeaTitle());
+        holder.desctv.setText(ideasRecyclerView.getIdeaDesc());
 
-                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Hey, I have thought of Idea!");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Title: " + titleList.get(position) + "\n\nDescription: " + desclList.get(position) + "\n\nTechnologies: " + techList.get(position));
-
-                context.startActivity(Intent.createChooser(sharingIntent, "Share via"));
-            }
-        });
+//        holder.shareBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+//                sharingIntent.setType("text/plain");
+//
+//                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Hey, I have thought of Idea!");
+//                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Title: " + titleList.get(position) + "\n\nDescription: " + desclList.get(position) + "\n\nTechnologies: " + techList.get(position));
+//
+//                context.startActivity(Intent.createChooser(sharingIntent, "Share via"));
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return titleList.size();
+        return ideasList.size();
     }
 
-    public class view_holder extends RecyclerView.ViewHolder {
+    public class viewHolder extends RecyclerView.ViewHolder {
 
-        TextView titletv, desctv, techtv;
-        CardView editBtn, deleteBtn, shareBtn;
+        public TextView titletv, desctv;
+//        CardView editBtn, deleteBtn, shareBtn;
 
-        public view_holder(final View itemView) {
+        public viewHolder(final View itemView) {
             super(itemView);
 
             titletv = itemView.findViewById(R.id.titletv);
             desctv = itemView.findViewById(R.id.desctv);
-            editBtn = itemView.findViewById(R.id.editBtn);
-            deleteBtn = itemView.findViewById(R.id.deleteBtn);
-            shareBtn = itemView.findViewById(R.id.shareBtn);
+//            editBtn = itemView.findViewById(R.id.editBtn);
+//            deleteBtn = itemView.findViewById(R.id.deleteBtn);
+//            shareBtn = itemView.findViewById(R.id.shareBtn);
 //        techtv = itemView.findViewById(R.id.techtv);
         }
     }

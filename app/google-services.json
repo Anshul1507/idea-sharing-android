@@ -52,6 +52,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "788060394736-fe0obrdpv9hlfgl56ptfe5tsnr6bpblt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.dsckiet.ideasharing",
+            "certificate_hash": "1f06dda329e153425c86820162ccba5624b5c5e0"
+          }
+        },
+        {
+          "client_id": "788060394736-jdfd67go86cpdmp06o7tm63bu1eam6d7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.dsckiet.ideasharing",
+            "certificate_hash": "1a691eaa6c50dfc0bc27267be240d059b8f11838"
+          }
+        },
+        {
           "client_id": "788060394736-f4sqpjotospqnq5b8v65qjd8dt1dih9t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

@@ -69,6 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
+                android:fontFamily="@font/montserrat"
                 android:backgroundTint="@color/colorSpecial"
                 android:padding="8dp"
                 android:text="Add"
